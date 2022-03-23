@@ -1,3 +1,4 @@
+import Tina from "../.tina/components/TinaDynamicProvider.js";
 import { useRouter } from "next/router";
 import splitbee from "@splitbee/web";
 import { DefaultSeo } from "next-seo";
@@ -35,7 +36,9 @@ function MyApp({ Component, pageProps }) {
 					cardType: "summary_large_image",
 				}}
 			/>
-			<Component {...pageProps} />
+			<Tina>
+				<Component {...pageProps} />
+			</Tina>
 		</>
 	);
 }
