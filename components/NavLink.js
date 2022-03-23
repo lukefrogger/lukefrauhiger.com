@@ -1,16 +1,20 @@
 import Link from "next/link";
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 
 export default function NavLink({ href, external, children, className }) {
-	if (external) {
-		<a href={href} className="whitespace-nowrap text-base font-medium">
-			{children}
-		</a>;
-	}
-
 	return (
 		<Link href={href ?? "#"} passHref>
-			<a className={`whitespace-nowrap text-base font-medium px-2${className ? ` ${className}` : ""}`}>
+			<a
+				className={`whitespace-nowrap hover:underline text-base font-medium px-2${
+					className ? ` ${className}` : ""
+				} relative`}
+			>
 				{children}
+				{external && (
+					<span className="absolute text-white top-0 -right-1">
+						<ExternalLinkIcon className="h-3 w-3" />
+					</span>
+				)}
 			</a>
 		</Link>
 	);

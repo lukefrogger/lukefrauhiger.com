@@ -6,6 +6,7 @@ import whiteLogo from "../public/assets/logo-on-white.png";
 import redLogo from "../public/assets/logo-on-dark.png";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import Link from "next/link";
 
 const navItems = [
 	{ title: "Blog", href: "/blog" },
@@ -21,11 +22,11 @@ export default function Header() {
 			<div className="max-w-4xl mx-auto ">
 				<div className="flex justify-between items-center py-6 px-6 sm:px-4 mx-4 md:mx-0 md:justify-start">
 					<div className="flex justify-start lg:w-0 lg:flex-1 relative">
-						<NavLink href="/">
+						<Link href="/">
 							<div className="flex items-center absolute top-0 left-0 opacity-30">
-								<Image src={whiteLogo} alt="luke frauhiger logo" height={350} width={350} />
+								<Image src={whiteLogo} alt="luke frauhiger logo" height={280} width={280} />
 							</div>
-						</NavLink>
+						</Link>
 					</div>
 					<div className="md:hidden">
 						<Popover.Button className="rounded-md p-2 inline-flex items-center justify-center">
