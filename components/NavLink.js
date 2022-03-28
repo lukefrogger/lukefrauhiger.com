@@ -10,7 +10,7 @@ export default function NavLink({ href, external, children, className }) {
 				} relative`}
 			>
 				{children}
-				{external && (
+				{external && typeof children === "string" && (
 					<span className="absolute text-white top-0 -right-1">
 						<ExternalLinkIcon className="h-3 w-3" />
 					</span>

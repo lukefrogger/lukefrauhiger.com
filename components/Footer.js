@@ -11,7 +11,7 @@ export default function Header() {
 		<div className="fixed bottom-0 flex border-t border-primary-dark bg-primary-dark/50 text-sm w-full">
 			<div className="border-r border-primary-dark px-6 text-white/70 py-2">Powered by:</div>
 			{poweredBy.map((item) => (
-				<div key={item.title} className="border-r border-primary-dark px-4 py-2 text-white/70 relative">
+				<div key={item.title} className="border-r border-primary-dark px-6 py-2 text-white/70 relative">
 					<Link href={item.href}>
 						<a
 							target="_blank"
@@ -19,7 +19,7 @@ export default function Header() {
 							className="hover:underline underline-offset-4 no-underline"
 						>
 							{item.title}
-							<span className="absolute text-white/30 top-2 right-1">
+							<span className="absolute text-white/30 top-2 right-2">
 								<ExternalLinkIcon className="h-3 w-3" />
 							</span>
 						</a>
