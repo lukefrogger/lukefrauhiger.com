@@ -38,6 +38,7 @@ export default function Header() {
 								key={item.href}
 								href={item.href}
 								external={!!item.icon}
+								noIcon={true}
 								className="text-white hover:text-blue-200 px-2"
 							>
 								{(item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />) || item.title}
