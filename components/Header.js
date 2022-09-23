@@ -9,8 +9,6 @@ import NavLink from "./NavLink";
 import Link from "next/link";
 
 const navItems = [
-	{ title: "Blog", href: "/blog" },
-	{ title: "About", href: "/about" },
 	{ icon: FaTwitter, href: "https://twitter.com/lukefrogger" },
 	{ icon: FaGithub, href: "https://github.com/lukefrogger" },
 	{ icon: FaLinkedinIn, href: "https://www.linkedin.com/in/luke-frauhiger-56639318b/" },
@@ -23,8 +21,8 @@ export default function Header() {
 				<div className="flex justify-between items-center py-6 px-6 sm:px-4 mx-4 md:mx-0 md:justify-start">
 					<div className="flex justify-start lg:w-0 lg:flex-1 relative">
 						<Link href="/">
-							<div className="flex items-center absolute top-0 left-0 opacity-30">
-								<Image src={whiteLogo} alt="luke frauhiger logo" height={280} width={280} />
+							<div>
+								<Image src={whiteLogo} alt="luke frauhiger logo" height={40} width={40} />
 							</div>
 						</Link>
 					</div>
@@ -40,7 +38,7 @@ export default function Header() {
 								key={item.href}
 								href={item.href}
 								external={!!item.icon}
-								className="text-white hover:text-blue-200"
+								className="text-white hover:text-blue-200 px-2"
 							>
 								{(item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />) || item.title}
 							</NavLink>

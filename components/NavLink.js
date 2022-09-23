@@ -5,13 +5,12 @@ export default function NavLink({ href, external, children, className }) {
 	return (
 		<Link href={href ?? "#"} passHref>
 			<a
-				className={`whitespace-nowrap hover:underline text-base font-medium px-2${
-					className ? ` ${className}` : ""
-				} relative`}
+				className={`whitespace-nowrap hover:underline text-base flex ${className ? className : ""}`}
+				{...(external && { target: "_target" })}
 			>
 				{children}
 				{external && typeof children === "string" && (
-					<span className="absolute text-white top-0 -right-1">
+					<span className="mt-1 ml-px">
 						<ExternalLinkIcon className="h-3 w-3" />
 					</span>
 				)}

@@ -1,31 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import NavLink from "../components/NavLink";
+import PageSection from "../components/PageSection";
+import Project from "../components/Project";
 import portrait from "../public/assets/portrait.png";
 import fetchForms from "../public/assets/fetchforms-logo.png";
+import churchReserve from "../public/assets/churchReserve-logo.png";
+import klonCalendar from "../public/assets/klon-logo.png";
+import ContactForm from "../components/forms/ContactForm";
 
 export default function Home() {
 	const pageMeta = {
-		title: "Luke Frauhiger | Developer, Entrepreneur, Engineer",
+		title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
 		description:
-			"Welcome! I'm Luke, an indie developer, founder, and engineer who loves to build and design new things.",
+			"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
 	};
 	return (
 		<Layout pageMeta={pageMeta}>
-			<div className="pb-10 flex flex-col items-center">
-				<div className="w-64">
-					<Image src={portrait} alt="luke frauhiger" />
+			<div className="pb-20 flex flex-col items-center">
+				<div className="w-48 relative">
+					<Image src={portrait} alt="luke frauhiger" className="border border-white rounded-full" />
 				</div>
-				<h1 className="mt-8 text-5xl tracking-tight font-extrabold sm:text-6xl md:text-7xl ">Hey, I'm Luke</h1>
+				<h1 className="mt-12 text-5xl tracking-tight font-extrabold sm:text-6xl md:text-7xl tracking-normal">
+					Hey, I'm Luke
+				</h1>
 				<h3 className="mt-5 font-light text-white sm:text-3xl md:mt-5 md:text-4xl lg:mx-0 text-center">
-					I bring ideas to life with web technologies.
+					I bring ideas to life with web technology.
 				</h3>
 				<p className="mt-4 text-highlight text-2xl lg:mx-0 text-center">Full stack developer + Entrepreneur</p>
 			</div>
-			<PageSection title="Writing" link={{ href: "/writing", text: "more articles" }}>
-				<Link href="/blog/thingsgs">
-					<a className="text-2xl text-highlight hover:underline cursor-pointer">
+			<PageSection title="About me">
+				<p className="mt-2">
+					I’ve been building things on the web since 2013. I’ve built everything from APIs to static websites
+					to data integrations. Right now, you can find working as a freelance contractor while building my
+					own SaaS projects and businesses. If you’d like to work with me -{" "}
+					<Link href="#contact-me">
+						<a className="text-highlight underline decoration-dotted underline-offset-2">let’s talk!</a>
+					</Link>
+				</p>
+			</PageSection>
+			<PageSection title="Writing">
+				<Link href="https://medium.com/swlh/full-stack-development-starter-svelte-and-express-831aefee41c0">
+					<a target="_blank" className="text-2xl text-highlight hover:underline cursor-pointer">
 						Full Stack Starter - Svelte and Express
 					</a>
 				</Link>
@@ -35,40 +51,31 @@ export default function Home() {
 					with creating a get endpoint and getting data from the GIPHY API.
 				</p>
 			</PageSection>
-			<PageSection title="Current project">
-				<div className="flex ">
-					<div className="mr-4 mt-1 relative">
-						<Image src={fetchForms} alt="fetch forms logo" height={120} width={120} />
-					</div>
-					<div className="flex-1">
-						<h5 className="text-2xl text-highlight mb-2">Fetch Forms</h5>
-						<NavLink href="https://www.fetchforms.io" external className="text-white/70">
-							www.fetchforms.io
-						</NavLink>
-						<p className="mt-2">
-							Get the speed of a form builder with the control of a code. Fetch Forms empowers developers
-							and companies who code by centralizing form submissions and helping devs build forms really
-							fast.
-						</p>
-					</div>
+			<PageSection title="Recent projects">
+				<div className="space-y-8 mt-8">
+					<Project
+						title="Fetch Forms"
+						image={fetchForms}
+						url="www.fetchforms.io"
+						description="A headless form builder that is built to empower teams and developers to collaborate and use forms at blazing speeds."
+					/>
+					<Project
+						title="ChurchReserve"
+						image={churchReserve}
+						url="www.churchreserve.com"
+						description="A guest reservation platform designed to help churches manage seating during social-distancing requirements. Sold to The Events Calendar in late 2021."
+					/>
+					<Project
+						title="Klōn Calendar"
+						image={klonCalendar}
+						url="app.kloncalendar.com"
+						description="Helping consultants and freelancers never be double-booked with multi-directional calendar syncing with multiple calendars."
+					/>
 				</div>
 			</PageSection>
+			<PageSection title="Contact me">
+				<ContactForm />
+			</PageSection>
 		</Layout>
-	);
-}
-
-function PageSection({ title, link, children }) {
-	return (
-		<div className="py-8">
-			<div className="mb-6 flex justify-between items-center bg-primary-dark/50 p-6 rounded-2xl shadow-sm">
-				<h3 className="text-3xl font-light">{title}</h3>
-				{link && (
-					<NavLink href={link.href} className="px-3 py-2 border border-white/10 rounded-lg text-white/80">
-						{link.text}
-					</NavLink>
-				)}
-			</div>
-			<div className="px-1">{children}</div>
-		</div>
 	);
 }

@@ -15,10 +15,10 @@ export default function Layout({ children, pageMeta }) {
 					}}
 				/>
 			)}
-			<div className="min-h-screen subpixel-antialiased pt-8 pb-10">
+			<div className="subpixel-antialiased pt-4 pb-10">
 				<Header />
-				<main className="max-w-4xl mx-auto py-6 sm:px-6 lg:px-8 relative">{children}</main>
-				<Footer />
+				<main className="max-w-4xl w-100 mx-auto py-6 sm:px-6">{children}</main>
+				{/* <Footer /> */}
 			</div>
 		</>
 	);
