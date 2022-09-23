@@ -13,6 +13,10 @@ export default function Layout({ children, pageMeta }) {
 						description: pageMeta.description,
 						title: pageMeta.title,
 					}}
+					twitter={{
+						description: pageMeta.description,
+						title: pageMeta.title,
+					}}
 				/>
 			)}
 			<div className="subpixel-antialiased pt-4 pb-10">
