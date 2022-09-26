@@ -59,7 +59,7 @@ export default function Header() {
 			>
 				<Popover.Panel
 					focus
-					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10"
 				>
 					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white">
 						<div className="pt-5 px-5">
@@ -79,7 +79,8 @@ export default function Header() {
 									<NavLink
 										key={item.href}
 										href={item.href}
-										external={!!item.icon}
+										external={true}
+										noIcon={true}
 										className="text-gray-900 hover:text-gray-700"
 									>
 										{(item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />) || item.title}
