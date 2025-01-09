@@ -1,17 +1,9 @@
 import { useRouter } from "next/router";
-import splitbee from "@splitbee/web";
 import { DefaultSeo } from "next-seo";
-import { useEffect } from "react";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
-	useEffect(() => {
-		splitbee.init({
-			apiUrl: "/_hive",
-			scriptUrl: "/bee.js",
-		});
-	}, []);
 
 	return (
 		<>
