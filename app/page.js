@@ -1,22 +1,29 @@
 import Image from "next/image";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import PageSection from "../components/PageSection";
 import Project from "../components/Project";
 import portrait from "../public/assets/portrait.png";
 import { projects } from "../content";
-import ContactForm from "../components/forms/ContactForm";
 
-export default function Home() {
-	const pageMeta = {
+export const metadata = {
+	title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
+	description:
+		"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
+	openGraph: {
 		title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
 		description:
 			"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
-	};
+	},
+	twitter: {
+		title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
+		description:
+			"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
+	},
+};
 
-	console.log(projects)
+export default function Home() {
 	return (
-		<Layout pageMeta={pageMeta}>
+		<Layout>
 			<div className="pb-20 flex flex-col items-center">
 				<div className="w-48 relative">
 					<Image src={portrait} alt="luke frauhiger" className="border border-white rounded-full" />
@@ -31,18 +38,16 @@ export default function Home() {
 			</div>
 			<PageSection title="About me">
 				<p className="mt-2">
-					I’ve been building things on the web since 2013. I've built everything from APIs to static websites
+					I've been building website, APIs, and web apps for over a decade. I've built everything from APIs to static websites
 					to data integrations. Right now, you can find working as a freelance contractor while building my
-					own SaaS projects and businesses. If you'd like to work with me -{" "}
-					<Link href="#contact-me">
-						<a className="text-highlight underline decoration-dotted underline-offset-2">let’s talk!</a>
-					</Link>
+					own SaaS projects and businesses.
 				</p>
 			</PageSection>
 			<PageSection title="Recent projects">
 				<div className="space-y-8 mt-8">
 					{projects.map((project) => (
 						<Project
+							key={project.url}
 							title={project.title}
 							image={project.image}
 							url={project.url}
@@ -50,9 +55,6 @@ export default function Home() {
 						/>
 					))}
 				</div>
-			</PageSection>
-			<PageSection title="Contact me">
-				<ContactForm />
 			</PageSection>
 		</Layout>
 	);

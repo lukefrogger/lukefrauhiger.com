@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
 import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { XIcon, MenuAlt3Icon } from "@heroicons/react/outline";
+import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import whiteLogo from "../public/assets/logo-on-white.png";
 import redLogo from "../public/assets/logo-on-dark.png";
 import Image from "next/image";
@@ -27,10 +27,10 @@ export default function Header() {
 						</Link>
 					</div>
 					<div className="md:hidden">
-						<Popover.Button className="rounded-md p-2 inline-flex items-center justify-center">
+						<PopoverButton className="rounded-md p-2 inline-flex items-center justify-center">
 							<span className="sr-only">Open menu</span>
-							<MenuAlt3Icon className="h-8 w-8 " aria-hidden="true" />
-						</Popover.Button>
+							<Bars3Icon className="h-8 w-8 " aria-hidden="true" />
+						</PopoverButton>
 					</div>
 					<div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
 						{navItems.map((item) => (
@@ -57,7 +57,7 @@ export default function Header() {
 				leaveFrom="opacity-100 scale-100"
 				leaveTo="opacity-0 scale-95"
 			>
-				<Popover.Panel
+				<PopoverPanel
 					focus
 					className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-10"
 				>
@@ -67,10 +67,10 @@ export default function Header() {
 								<NavLink href="/">
 									<Image src={redLogo} alt="luke frauhiger logo" height={30} width={30} />
 								</NavLink>
-								<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+								<PopoverButton className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
 									<span className="sr-only">Close menu</span>
-									<XIcon className="h-6 w-6" aria-hidden="true" />
-								</Popover.Button>
+									<XMarkIcon className="h-6 w-6" aria-hidden="true" />
+								</PopoverButton>
 							</div>
 						</div>
 						<div className="py-6 px-5 space-y-6">
@@ -89,7 +89,7 @@ export default function Header() {
 							</div>
 						</div>
 					</div>
-				</Popover.Panel>
+				</PopoverPanel>
 			</Transition>
 		</Popover>
 	);
