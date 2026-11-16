@@ -62,7 +62,7 @@ export default function Home() {
 				</p>
 				<p className="mt-2">
 					If you need help with a project or just want to chat, feel free to book a time with me!{" "}
-					<NavLink target="_blank" href="https://app.orcacal.com/scheduler/21aaae59-3b85-4bc9-b4a9-28a314b6c5e7" className="text-white/70">
+					<NavLink external href="https://app.orcacal.com/scheduler/21aaae59-3b85-4bc9-b4a9-28a314b6c5e7" className="text-white/70">
 						Book Here.
 					</NavLink>
 					.
