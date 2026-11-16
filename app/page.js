@@ -6,18 +6,18 @@ import portrait from "../public/assets/portrait.png";
 import { projects } from "../content";
 
 export const metadata = {
-	title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
+	title: "Luke Frauhiger | Developer, Consultant, Entrepreneur",
 	description:
-		"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
+		"I'm Luke, an software developer, consultant, and founder who loves to design and build things on the web.",
 	openGraph: {
-		title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
+		title: "Luke Frauhiger | Developer, Consultant, Entrepreneur",
 		description:
-			"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
+			"I'm Luke, an software developer, consultant, and founder who loves to design and build things on the web.",
 	},
 	twitter: {
-		title: "Luke Frauhiger | Developer, Entrepreneur, Indie developer",
+		title: "Luke Frauhiger | Developer, Consultant, Entrepreneur",
 		description:
-			"Welcome! I'm Luke, an front-end developer, serverless developer, and founder who loves to build and design new things on the web.",
+			"I'm Luke, an software developer, consultant, and founder who loves to design and build things on the web.",
 	},
 };
 
@@ -32,15 +32,29 @@ export default function Home() {
 					Hey, I'm Luke
 				</h1>
 				<h3 className="mt-5 font-light text-white sm:text-3xl md:mt-5 md:text-4xl lg:mx-0 text-center">
-					I bring ideas to life with web technology.
+					I help businesses bring their ideas to life.
 				</h3>
-				<p className="mt-4 text-highlight text-2xl lg:mx-0 text-center">Full stack developer + Entrepreneur</p>
+				<p className="mt-4 text-highlight text-2xl lg:mx-0 text-center">Technical Leader and Software Architect</p>
 			</div>
 			<PageSection title="About me">
-				<p className="mt-2">
-					I've been building website, APIs, and web apps for over a decade. I've built everything from APIs to static websites
-					to data integrations. Right now, you can find working as a freelance contractor while building my
-					own SaaS projects and businesses.
+				<p className="mt-3">
+					I'm a technical leader who designs and builds software systems. I've been doing this since 2013, first as an engineer, 
+					then as an architect, and recently as a founder.
+				</p>
+				<p className="mt-3">
+					I was the technical co-founder of ChurchReserve where I built the platform and led the company through its 
+					acquisition by TheEventsCalendar. Today I lead engineering at Clarify, a studio I co-founded, 
+					where I architect and build full-stack apps and websites for businesses in the outdoor-industry. 
+				</p>
+				<p className="mt-3">
+					During my career, I've developed a talent for translating messy business problems and ideas into defined technical 
+					requirements. I do my best work in collaborative and high-autonomy teams where I can own the technical direction 
+					from start to finish.
+				</p>
+				<p className="mt-3">
+					During my career, I've developed a talent for translating messy business problems and ideas into defined technical 
+					requirements. I do my best work in collaborative and high-autonomy teams where I can own the technical direction 
+					from start to finish.
 				</p>
 			</PageSection>
 			<PageSection title="Recent projects">
