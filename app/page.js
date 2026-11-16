@@ -60,12 +60,11 @@ export default function Home() {
 					defined technical requirements. I do my best work in collaborative and high-autonomy teams where I
 					can own the technical direction from start to finish.
 				</p>
-				<p className="mt-2">
-					If you need help with a project or just want to chat, feel free to book a time with me!{" "}
+				<p className="mt-2 inline-flex gap-1">
+					If you need help with a project or just want to chat, feel free to book a time with me!
 					<NavLink external href="https://app.orcacal.com/scheduler/21aaae59-3b85-4bc9-b4a9-28a314b6c5e7" className="text-white/70">
 						Book Here.
 					</NavLink>
-					.
 				</p>
 			</PageSection>
 			<PageSection title="Recent projects">
